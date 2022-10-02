@@ -1,4 +1,4 @@
-package com.cydeo.tightly_coupled;
+package com.tightly_coupled;
 
 public class CydeoApp {
     public static void main(String[] args) {
