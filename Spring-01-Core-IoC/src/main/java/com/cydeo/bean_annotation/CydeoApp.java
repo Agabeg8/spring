@@ -10,10 +10,13 @@ public class CydeoApp {
         ApplicationContext  container = new AnnotationConfigApplicationContext(ConfigApp.class,ConfigAny.class);
 
         FullTimeMentor ft = container.getBean(FullTimeMentor.class);
-        String dv = container.getBean(String.class);
-
         ft.createAccount();
+
+        String dv = container.getBean(String.class);
         System.out.println(dv);
+
+        Integer num = container.getBean(Integer.class);
+        System.out.println(num);
 
 
     }
