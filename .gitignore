@@ -90,9 +90,9 @@ release.properties
 Thumbs.db
 # Folder config file
 Desktop.ini
-######################
+#####################
 # Mac OSX
-######################
+#####################
 .DS_Store
 .svn
 # Thumbnails
