@@ -18,6 +18,9 @@ public class CydeoApp {
         Integer num = container.getBean(Integer.class);
         System.out.println(num);
 
+        PartTimeMentor pt = container.getBean(PartTimeMentor.class);
+        pt.createAccount();
+
 
     }
 }
