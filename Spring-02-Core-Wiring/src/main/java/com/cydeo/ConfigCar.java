@@ -13,10 +13,21 @@ public class ConfigCar {
         return c;
     }
 
+    //Direct Wiring
+//    @Bean
+//    Person person(){
+//
+//        Person p = new Person();
+//        p.setCar(car());
+//        p.setName("Mike");
+//        return p;
+//    }
+    //Auto wiring
     @Bean
-    Person person(){
+    Person person(Car car){
 
         Person p = new Person();
+        p.setCar(car);
         p.setName("Mike");
         return p;
     }
