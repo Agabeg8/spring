@@ -13,10 +13,13 @@ public class CydeoApp {
         String dv = container.getBean(String.class);
         //PartTimeMentor pt = container.getBean("p1",PartTimeMentor.class);
         PartTimeMentor pt = container.getBean(PartTimeMentor.class);
+        Integer num = container.getBean(Integer.class);
+
 
         pt.createAccount();
         ft.createAccount();
         System.out.println(dv);
+        System.out.println(num);
 
 
     }
