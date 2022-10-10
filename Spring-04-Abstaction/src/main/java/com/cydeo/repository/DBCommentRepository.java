@@ -6,6 +6,6 @@ public class DBCommentRepository implements CommentRepository {
 
     @Override
     public void store(Comment comment) {
-        System.out.println("Stroing comment: " + comment.getText() );
+        System.out.println("String comment: " + comment.getText() );
     }
 }
