@@ -3,6 +3,7 @@ package com.cydeo.service;
 import com.cydeo.model.Comment;
 import com.cydeo.proxy.CommentNotificationProxy;
 import com.cydeo.repository.CommentRepository;
+import lombok.Value;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Component;
 //@Scope(BeanDefinition.SCOPE_PROTOTYPE)
 @Lazy
 public class CommentService {
+
+
     private final CommentRepository commentRepository;
     private final CommentNotificationProxy commentNotificationProxy;
 
