@@ -8,6 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class CydeoApp {
     public static void main(String[] args) {
+
         Comment comment = new Comment();
         comment.setAuthor("Johnson");
         comment.setText("Spring Framework");
