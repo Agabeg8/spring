@@ -8,6 +8,7 @@ public class CydeoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CydeoApplication.class, args);
+
     }
 
 }
