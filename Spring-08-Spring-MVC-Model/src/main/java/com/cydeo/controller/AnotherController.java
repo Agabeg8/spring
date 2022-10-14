@@ -1,5 +1,4 @@
 package com.cydeo.controller;
-
 import com.cydeo.enums.Gender;
 import com.cydeo.model.Mentor;
 import org.springframework.stereotype.Controller;
@@ -10,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/mentor")
-public class MentorController {
+@RequestMapping("/another")
+public class AnotherController {
 
-    @RequestMapping("/list")  //localhost:8080/mentor/list
+    @RequestMapping("/list")  //localhost:8080/another/list
     public String showTable(Model model){
 
         List<Mentor> mentorList = new ArrayList<>();
@@ -23,7 +22,6 @@ public class MentorController {
         model.addAttribute("mentor", mentorList);
 
         return "/mentor/mentor-list";
-
     }
 
 }
