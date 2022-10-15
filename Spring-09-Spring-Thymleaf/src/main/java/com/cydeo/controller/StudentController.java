@@ -16,4 +16,10 @@ public class StudentController {
 
         return "student/register";
     }
+
+    @RequestMapping("/welcome")
+    public String info(){
+        return  "student/welcome";
+
+    }
 }
