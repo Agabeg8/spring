@@ -22,7 +22,7 @@ public class MentorController {
         mentorList.add(new Mentor("John", "Brand", 45, Gender.Male));
         model.addAttribute("mentor", mentorList);
 
-        return "/mentor/mentor-list";
+        return "mentor/mentor-list";
 
     }
 
