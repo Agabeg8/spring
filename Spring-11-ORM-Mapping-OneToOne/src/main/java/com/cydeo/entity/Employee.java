@@ -19,7 +19,9 @@ public class Employee extends BaseEntity {
     @Column(columnDefinition = "DATE")
     private LocalDate hireDate;
 
-    //private Departments departments;
+    @OneToOne
+    //@JoinColumn(name = "Aga")
+    private Department department;
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private int salary;
