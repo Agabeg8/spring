@@ -8,7 +8,7 @@ public class Student {
 
     @Id
     private Long id;
-    private String firstName;
+    private String firstName; //first_name
     private String lastName;
     private String email;
 }
