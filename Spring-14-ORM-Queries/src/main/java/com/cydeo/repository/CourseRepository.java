@@ -24,4 +24,5 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
     @Query("select c from Course c where c.category = :category and c.rating > :rating")
     List<Course> findAllByCategoryAndRatingGreaterThan(@Param("category") String category,@Param("rating") int rating);
 
+
 }
