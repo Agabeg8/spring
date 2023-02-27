@@ -3,6 +3,7 @@ package com.cydeo.controller;
 import com.cydeo.dto.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -24,9 +25,12 @@ public class Consume_RestTemplate {
     public User[] readAllUsers(){
 
        ResponseEntity<User[]> responseEntity = restTemplate.getForEntity(URI,User[].class);
-
-
        return responseEntity.getBody();
+    }
+    @GetMapping("{id}")
+    public Object readUser(@PathVariable("id") Integer id ){
 
+        String URL = URI + "/{id}";
+        return restTemplate.getForObject(URL,Object.class, id);
     }
 }
