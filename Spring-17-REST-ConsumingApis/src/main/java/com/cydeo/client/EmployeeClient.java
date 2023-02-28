@@ -10,5 +10,5 @@ import java.util.List;
 public interface EmployeeClient {
 
     @GetMapping("/data/v1/user?limit=10")
-    Employee getEmployee()
+    Employee getEmployee();
 }
