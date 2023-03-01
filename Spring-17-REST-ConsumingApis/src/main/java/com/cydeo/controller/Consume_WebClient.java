@@ -4,13 +4,17 @@ import com.cydeo.entity.Genre;
 import com.cydeo.entity.MovieCinema;
 import com.cydeo.repository.GenreRepository;
 import com.cydeo.repository.MovieCinemaRepository;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
 public class Consume_WebClient {
+    private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8080").build();
     private final MovieCinemaRepository movieCinemaRepository;
     private final GenreRepository genreRepository;
 
@@ -38,6 +42,26 @@ public class Consume_WebClient {
 
         return Mono.just(createdGenre);
         //return Mono.just(genreRepository.save(genre));
+    }
+    @DeleteMapping("/delete/genre/{id}")
+    public Mono<Void> deleteGenre(@PathVariable("id") Long id){
+        genreRepository.deleteById(id);
+        return Mono.empty();
+    }
+
+    //    ---------------------------WEBCLIENT---------------------------
+
+
+    @GetMapping("/flux")
+    public Flux<MovieCinema> readWithWebClient(){
+
+        return webClient
+                .get()
+                .uri("/flux-movie-cinemas")
+                .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                .retrieve()
+                .bodyToFlux(MovieCinema.class);
+
     }
 
 
